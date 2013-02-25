@@ -15,12 +15,26 @@ public class Product {
     
 
     public Product() {
+    }
+    
+
+    public Product(String productName, DiscountStrategy discount) {
 	
+	this.productName = productName;
+	this.discount = discount;
     }
 
+    
     public Product(String productID, String productName, DiscountStrategy discount) {
 	this.productID = productID;
 	this.productName = productName;
+	this.discount = discount;
+    }
+    
+    
+    public Product(String productID, double unitCost, DiscountStrategy discount) {
+	this.productID = productID;
+	this.unitCost = unitCost;
 	this.discount = discount;
     }
 
