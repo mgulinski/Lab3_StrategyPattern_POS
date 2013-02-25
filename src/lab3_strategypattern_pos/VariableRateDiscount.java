@@ -8,6 +8,7 @@ public class VariableRateDiscount implements DiscountStrategy {
 
     private double discountRate = 0;
     
+    
     public VariableRateDiscount() {
     }
 
@@ -34,10 +35,10 @@ public class VariableRateDiscount implements DiscountStrategy {
     }
 
     
-    
+    //testing VariableRateDiscount class
     public static void main(String[] args) {
 	
-	VariableRateDiscount mydiscount = new VariableRateDiscount();
+	DiscountStrategy mydiscount = new VariableRateDiscount();
 	mydiscount.setDiscountRate(0.1);
 	
 	System.out.println("My discount is " + mydiscount.getDiscountAmt(10, 10));
