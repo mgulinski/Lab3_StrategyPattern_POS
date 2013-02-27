@@ -1,5 +1,7 @@
 package lab3_strategypattern_pos;
 
+import java.text.DecimalFormat;
+
 /**
  * @author Machi
  * 
@@ -10,6 +12,8 @@ package lab3_strategypattern_pos;
  * 
  */
 public class Receipt {
+    
+    DecimalFormat fprice = new DecimalFormat("$#,##0.00");
     
     private Customer customer;
     private LineItem[] lineItems = new LineItem[0];
@@ -43,17 +47,24 @@ public class Receipt {
     public String displaySaleInfo() {
 	
 	
-	StringBuilder sale = new StringBuilder("\nThank You For Shopping With Us\n");
+	StringBuilder sale = new StringBuilder("\n~ THANK YOU FOR SHOPPING WITH US ~\n");
 	
-	sale.append(customer.getCustName());
+	sale.append("\nWelcome, ").append(customer.getCustName());
+	sale.append("\n\nProduct Name\t").append("Price\t").append("Qty\t").append("Extended\t").append("Discount\t").append("You Pay");
+	sale.append("\n-----------------------------------------------------------------------\n");
 	
 	for(int i = 0; i < lineItems.length; i++) {
 	    
 	    sale.append(lineItems[i].getProduct().getProductName());
+	    sale.append("\t").append(fprice.format(lineItems[i].getProduct().getUnitCost()));
+	    sale.append("\t").append(lineItems[i].getQty());
+	    sale.append("\t").append(fprice.format(lineItems[i].getItemExtendedPrice()));
+	    sale.append("\t\t").append(fprice.format(lineItems[i].getProduct().getDiscount().getDiscountAmt(lineItems[i].getProduct().getUnitCost(), lineItems[i].getQty())));
+	    sale.append("\t\t").append(fprice.format(lineItems[i].getItemFinalPrice())).append("\n");
 	}
 	
 	
-	String str = sale + "\nHave a nice day!";
+	String str = sale + "\n\n~ HAVE A NICE DAY! ~\n";
 	
 	return str;
     

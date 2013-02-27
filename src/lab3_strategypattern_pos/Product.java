@@ -87,31 +87,31 @@ public class Product {
     }
 
     
-    // testing product class
-    public static void main(String[] args) {
-	
-	Product myproduct = new Product("100", "Toilet Paper", new VariableRateDiscount(0.25));
-	
-	//myproduct.discount.setDiscountRate(0.1);
-	
-	System.out.println("Todays discount for " + myproduct.productName + " is: " 
-						  + myproduct.discount.getDiscountAmt(1, 3));
-	
-	
-	Product myproduct2 = new Product("99", "Beer", new VariableQtyRateDiscount(0.1));
-	
-	
-	
-	System.out.println("Todays discount for " + myproduct2.productName + " is: " 
-						  + myproduct2.discount.getDiscountAmt(1, 10));
-	
-	
-	Product myproduct3 = new Product("89", "Wine", new VariableQtyRateDiscount(0.1));
-	
-	
-	
-	System.out.println("Todays discount for " + myproduct3.productName + " is: " 
-						  + myproduct3.discount.getDiscountAmt(1, 30));
-	
-    }
+//    // testing product class
+//    public static void main(String[] args) {
+//	
+//	Product myproduct = new Product("100", "Toilet Paper", new VariableRateDiscount(0.25));
+//	
+//	//myproduct.discount.setDiscountRate(0.1);
+//	
+//	System.out.println("Todays discount for " + myproduct.productName + " is: " 
+//						  + myproduct.discount.getDiscountAmt(1, 3));
+//	
+//	
+//	Product myproduct2 = new Product("99", "Beer", new VariableQtyRateDiscount(0.1));
+//	
+//	
+//	
+//	System.out.println("Todays discount for " + myproduct2.productName + " is: " 
+//						  + myproduct2.discount.getDiscountAmt(1, 10));
+//	
+//	
+//	Product myproduct3 = new Product("89", "Wine", new VariableQtyRateDiscount(0.1));
+//	
+//	
+//	
+//	System.out.println("Todays discount for " + myproduct3.productName + " is: " 
+//						  + myproduct3.discount.getDiscountAmt(1, 30));
+//	
+//    }
 }

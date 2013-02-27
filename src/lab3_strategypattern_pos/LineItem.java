@@ -18,6 +18,7 @@ public class LineItem {
     
     
     public LineItem(String productId, int qty) {
+	
 	db = new FakeDatabase();
 	product = db.findProduct(productId);
 	this.qty = qty;
@@ -27,6 +28,11 @@ public class LineItem {
 
     public double getItemExtendedPrice() {
 	return product.getUnitCost() * qty;
+
+    }
+    
+    public double getItemFinalPrice() {
+	return getItemExtendedPrice() - product.getDiscount().getDiscountAmt(product.getUnitCost(), qty);
 
     }
 

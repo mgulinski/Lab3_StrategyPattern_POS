@@ -10,6 +10,7 @@ public class VariableQtyRateDiscount implements DiscountStrategy {
       
 
     public VariableQtyRateDiscount() {
+	discountRate = 0.1;
     }
 
     
@@ -57,24 +58,23 @@ public class VariableQtyRateDiscount implements DiscountStrategy {
 	this.discountRate = discountRate;
     }
 
-    // testing VariableQtyRateDiscount class    
-    public static void main(String[] args) {
-	
-	DiscountStrategy mydiscount = new VariableQtyRateDiscount(0.2);
-	
-	//mydiscount.setDiscountRate(0.1);
-	
-	System.out.println("Discount 1 is now: " + mydiscount.getDiscountAmt(1, 5));
-	
-	
-	DiscountStrategy mydiscount1 = new VariableQtyRateDiscount();
-	
-	mydiscount1.setDiscountRate(0.1);
-	
-	System.out.println("Discount 2 is now: " + mydiscount1.getDiscountAmt(1, 30));
-   
-	
-    }
+//    // testing VariableQtyRateDiscount class    
+//    public static void main(String[] args) {
+//	
+//	DiscountStrategy mydiscount = new VariableQtyRateDiscount(0.2);
+//	
+//	//mydiscount.setDiscountRate(0.1);
+//	
+//	System.out.println("Discount 1 is now: " + mydiscount.getDiscountAmt(1, 5));
+//	
+//	
+//	DiscountStrategy mydiscount1 = new VariableQtyRateDiscount();
+//	
+//	mydiscount1.setDiscountRate(0.1);
+//	
+//	System.out.println("Discount 2 is now: " + mydiscount1.getDiscountAmt(1, 30));//   
+//	
+//    }
 
     
 }
