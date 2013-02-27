@@ -7,7 +7,7 @@ package lab3_strategypattern_pos;
  */
 public class Product {
     
-    private String productID;
+    private String productId;
     private String productName;
     private double unitCost;
     
@@ -25,24 +25,24 @@ public class Product {
     }
 
     
-    public Product(String productID, String productName, DiscountStrategy discount) {
-	this.productID = productID;
+    public Product(String productId, String productName, DiscountStrategy discount) {
+	this.productId = productId;
 	this.productName = productName;
 	this.discount = discount;
     }
     
     
-    public Product(String productID, double unitCost, DiscountStrategy discount) {
-	this.productID = productID;
+    public Product(String productId, double unitCost, DiscountStrategy discount) {
+	this.productId = productId;
 	this.unitCost = unitCost;
 	this.discount = discount;
     }
 
    
     
-    public Product(String productID, String productName, double unitCost, DiscountStrategy discount) {
+    public Product(String productId, String productName, double unitCost, DiscountStrategy discount) {
 	
-	this.productID = productID;
+	this.productId = productId;
 	this.productName = productName;
 	this.unitCost = unitCost;
 	this.discount = discount;
@@ -61,12 +61,12 @@ public class Product {
     
     
     
-    public String getProductID() {
-	return productID;
+    public String getProductId() {
+	return productId;
     }
 
     public void setProductID(String productID) {
-	this.productID = productID;
+	this.productId = productID;
     }
     
     public String getProductName() {
