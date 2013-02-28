@@ -13,10 +13,10 @@ public class FakeDatabase {
     };
     // Notice we assign a default discount strategy component object to each product
     Product[] products = {
-	new Product("BH01", "Baseball Hat", 19.95, new VariableRateDiscount(0.15)),
-	new Product("MDS02", "Men's Dress Shirt", 35.50, new VariableQtyRateDiscount(35.50)),
-	new Product("WS03", "Women's Socks", 9.50, new VariableRateDiscount(0.20)),
-	new Product("MSH05", "Men's Shorts", 12.50, new VariableQtyRateDiscount(0.10))
+	new Product("BH01", "Baseball Hat\t", 19.95, new VariableRateDiscount(0.15)),
+	new Product("MDS02", "Men's Dress Shirt", 35.50, new VariableQtyRateDiscount(0.10)),
+	new Product("WS03", "Women's Socks\t", 3.50, new VariableRateDiscount(0.20)),
+	new Product("MSH05", "Men's Shorts\t", 12.50, new VariableQtyRateDiscount(0.10))
     };
 
     // Just call this method to find a customer in the array by its id.

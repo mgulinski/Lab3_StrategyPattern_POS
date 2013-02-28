@@ -12,8 +12,9 @@ public class DriverClass {
 	CashRegister cr = new CashRegister();
 	
 	cr.startNewSale("MG0323");
+	cr.addNewItemToSale("BH01",10);
+	cr.addNewItemToSale("MDS02", 5);
 	cr.addNewItemToSale("MSH05", 5);
-	cr.addNewItemToSale("WS03", 4);
 	
 	cr.printReceipt();
 	

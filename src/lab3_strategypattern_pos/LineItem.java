@@ -5,8 +5,9 @@ package lab3_strategypattern_pos;
  * 
  * LineItem class is responsible for:
  * looking up a product info
- * knowing qty of a product
- * 
+ * knowing product quantity
+ * calculating extended price 
+ * calculating final price after discount
  * 
  */
 public class LineItem {

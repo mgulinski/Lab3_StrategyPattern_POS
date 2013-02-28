@@ -8,6 +8,7 @@ import java.text.DecimalFormat;
  * Receipt class is responsible for:
  * looking up customer info
  * collecting products into array of lineItems
+ * calculating sale total amount
  * displaying sale info
  * 
  */
@@ -44,14 +45,29 @@ public class Receipt {
     }
     
     
+    
+    
+    private double getTotalSaleAmt() {
+	
+	double saleTotal = 0;
+	
+	for (LineItem lit : lineItems) {
+	    
+	    saleTotal += lit.getItemFinalPrice();
+	}
+	
+	return saleTotal;
+    }
+    
+    
     public String displaySaleInfo() {
 	
 	
 	StringBuilder sale = new StringBuilder("\n~ THANK YOU FOR SHOPPING WITH US ~\n");
 	
 	sale.append("\nWelcome, ").append(customer.getCustName());
-	sale.append("\n\nProduct Name\t").append("Price\t").append("Qty\t").append("Extended\t").append("Discount\t").append("You Pay");
-	sale.append("\n-----------------------------------------------------------------------\n");
+	sale.append("\n\nProduct Name\t\t").append("Price\t").append("Qty\t").append("Extended\t").append("Discount\t").append("You Pay");
+	sale.append("\n--------------------------------------------------------------------------------\n");
 	
 	for(int i = 0; i < lineItems.length; i++) {
 	    
@@ -63,7 +79,7 @@ public class Receipt {
 	    sale.append("\t\t").append(fprice.format(lineItems[i].getItemFinalPrice())).append("\n");
 	}
 	
-	
+	sale.append("\n\tTOTAL:\t").append(fprice.format(getTotalSaleAmt()));
 	String str = sale + "\n\n~ HAVE A NICE DAY! ~\n";
 	
 	return str;
