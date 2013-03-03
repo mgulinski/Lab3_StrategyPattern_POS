@@ -9,7 +9,11 @@ public class DriverClass {
     
     public static void main(String[] args) {
 	
-	CashRegister cr = new CashRegister();
+	ReceiptOutputStrategy out = new ConsoleOutputStrategy();
+	ReceiptOutputStrategy out2 = new GuiOutputStrategy();
+	ReceiptOutputStrategy out3 = new FileOutputStrategy();
+	
+	CashRegister cr = new CashRegister(out3);
 	
 	cr.startNewSale("AD1212");
 	cr.addNewItemToSale("MDS02",10);

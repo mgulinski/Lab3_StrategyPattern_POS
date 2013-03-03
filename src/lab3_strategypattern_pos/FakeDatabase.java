@@ -18,7 +18,7 @@ public class FakeDatabase {
 	new Product("WS03", "Women's Socks\t", 3.50, new VariableRateDiscount(0.20)),
 	new Product("MSH05", "Men's Shorts\t", 12.50, new VariableQtyRateDiscount()),
 	new Product("SMT00", "Spider-man T-Shirt", 15.99, new VariableRateDiscount(0.25)),
-	new Product("WU880", "Women's Underware", 2.99, new VariableQtyRateDiscount())
+	new Product("WU880", "Women's Underwear", 2.99, new VariableQtyRateDiscount())
     };
 
     // Just call this method to find a customer in the array by its id.
