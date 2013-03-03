@@ -1,6 +1,9 @@
 package lab3_strategypattern_pos;
 
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * @author Machi
@@ -19,6 +22,11 @@ public class Receipt {
     private Customer customer;
     private LineItem[] lineItems = new LineItem[0];
     private FakeDatabase db;
+    
+    Date date = new Date();
+    Calendar c = Calendar.getInstance();
+    String dformat = "MM/dd/yyyy hh:mm a";
+    SimpleDateFormat sdf = new SimpleDateFormat(dformat);
     
     
     // constructor
@@ -62,10 +70,15 @@ public class Receipt {
     
     public String displaySaleInfo() {
 	
+	 
+	 date = c.getTime();
+	 
+	
 	
 	StringBuilder sale = new StringBuilder("\n~ THANK YOU FOR SHOPPING WITH US ~\n");
 	
 	sale.append("\nWelcome, ").append(customer.getCustName());
+	sale.append("\t\t\t\t\t").append(sdf.format(date));
 	sale.append("\n\nProduct Name\t\t").append("Price\t").append("Qty\t").append("Extended\t").append("Discount\t").append("You Pay");
 	sale.append("\n--------------------------------------------------------------------------------\n");
 	
@@ -76,10 +89,12 @@ public class Receipt {
 	    sale.append("\t").append(lineItems[i].getQty());
 	    sale.append("\t").append(fprice.format(lineItems[i].getItemExtendedPrice()));
 	    sale.append("\t\t").append(fprice.format(lineItems[i].getProduct().getDiscount().getDiscountAmt(lineItems[i].getProduct().getUnitCost(), lineItems[i].getQty())));
+//	    double finalamt = lineItems[i].getItemFinalPrice();
 	    sale.append("\t\t").append(fprice.format(lineItems[i].getItemFinalPrice())).append("\n");
 	}
 	
 	sale.append("\n\tTOTAL:\t").append(fprice.format(getTotalSaleAmt()));
+	
 	String str = sale + "\n\n~ HAVE A NICE DAY! ~\n";
 	
 	return str;

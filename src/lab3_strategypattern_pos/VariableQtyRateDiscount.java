@@ -6,31 +6,35 @@ package lab3_strategypattern_pos;
  */
 public class VariableQtyRateDiscount implements DiscountStrategy {
     
-    private double discountRate;
-      
-
-        
-    public VariableQtyRateDiscount(double discountRate) {
-	
-	this.discountRate = discountRate;
-    }
     
-    // it makes more sense to me to calculate discount based of the same rate
-    // that gets mulitplied by different factor depending on qty
+    private double discountRate;
+        
+    public VariableQtyRateDiscount() {
+	
+    }
+        
+   /**
+    * getDiscountAmt method takes accepts two parameters
+    * it assigns appropriate discount rate based on purchase quantity
+    * lastly it calculates discount amount for purchased line item
+    * @param unitCost
+    * @param qty
+    * @return 
+    */
     @Override
     public double getDiscountAmt(double unitCost, int qty) {
 
 	if (qty >= 20) {
 
-	    discountRate *= 4;
+	    discountRate = 0.2;
 
 	} else if (qty >= 10) {
 
-	    discountRate *= 2;
+	    discountRate = 0.15;
 	    
 	} else if (qty >= 5) {
 
-	    discountRate *= 1;	
+	    discountRate = 0.1;	
 	}
 	
 	else {
@@ -42,7 +46,6 @@ public class VariableQtyRateDiscount implements DiscountStrategy {
 	
     }
     
-   
       
     @Override
     public double getDiscountRate() {
@@ -55,23 +58,5 @@ public class VariableQtyRateDiscount implements DiscountStrategy {
 	this.discountRate = discountRate;
     }
 
-    // testing VariableQtyRateDiscount class    
-    public static void main(String[] args) {
-	
-	DiscountStrategy mydiscount = new VariableQtyRateDiscount(0.2);
-	
-	//mydiscount.setDiscountRate(0.1);
-	
-	System.out.println("Discount 1 is now: " + mydiscount.getDiscountAmt(1, 5));
-	
-	
-	DiscountStrategy mydiscount1 = new VariableQtyRateDiscount(0.1);
-	
-		
-	System.out.println("Discount 2 is now: " + mydiscount1.getDiscountAmt(1, 20));//   
-	
-    }
-
-    
 }
 
